@@ -39,16 +39,16 @@ MainWindow::MainWindow(QWidget *parent)
         ui->pushButton_20->setText(TTT::SYMBOL_LEER);
         ui->pushButton_21->setText(TTT::SYMBOL_LEER);
         ui->pushButton_22->setText(TTT::SYMBOL_LEER);
-
+        ui->label_spieler1_gowonnen->setNum(ttt->spieler1_gewonnen);
+        ui->label_spieler2_gowonnen->setNum(ttt->spieler2_gewonnen);
         switchLabel();
     };
-    auto reset = [this, ttt, neuesSpiel] () //modified capture
+    auto reset = [ttt, neuesSpiel] () //modified capture
     {
         ttt->reset();
         neuesSpiel();
-        ui->label_spieler1_gowonnen->setNum(ttt->spieler1_gewonnen);
-        ui->label_spieler2_gowonnen->setNum(ttt->spieler2_gewonnen);
     };
+
 
 
     auto zugLambda = [switchLabel, this, ttt, neuesSpiel] (QPushButton* button, int x, int y) //modified capture

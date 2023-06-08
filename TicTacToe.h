@@ -40,14 +40,10 @@ public:
         {
             return false;
         }
-        else if ((spieler == TTT::SPIELER_1 || spieler == TTT::SPIELER_2) && spielfeld[x][y] == TTT::LEER)
+        if ((spieler == TTT::SPIELER_1 || spieler == TTT::SPIELER_2) && spielfeld[x][y] == TTT::LEER)
         {
             spielfeld[x][y] = spieler;
             return true;
-        }
-        else
-        {
-            return false;
         }
     }
     int getSpieler()
@@ -79,7 +75,6 @@ public:
     int getSieger()
     {
 
-
         if ((spielfeld[0][0] == TTT::SPIELER_1 && spielfeld[1][0] == TTT::SPIELER_1 && spielfeld[2][0] == TTT::SPIELER_1)
              ||(spielfeld[0][1] == TTT::SPIELER_1 && spielfeld[1][1] == TTT::SPIELER_1 && spielfeld[2][1] == TTT::SPIELER_1)
              ||(spielfeld[0][2] == TTT::SPIELER_1 && spielfeld[1][2] == TTT::SPIELER_1 && spielfeld[2][2] == TTT::SPIELER_1)
@@ -102,12 +97,8 @@ public:
         {
             return TTT::SPIELER_2;
         }
-        else
-        {
-            return TTT::LEER;
-        }
 
-        //return TTT::LEER;
+        return TTT::LEER;
     }
     TicTacToe()
     {
